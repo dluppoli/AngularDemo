@@ -10,7 +10,7 @@
             <p class="card-title h5 text-end">{{libro.prezzo | number:'1.2-2' | currency:'EUR'}}</p>
             <div [class.text-warning]="libro.preferito" 
                  [class.text-secondary]="!libro.preferito" 
-                (click)="modificaPreferito()">{{libro.preferito}}</div>
+                (click)="modificaPreferito(libro.preferito)">{{libro.preferito}}</div>
         </div>
     </div>
 </div>

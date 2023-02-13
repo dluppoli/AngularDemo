@@ -15,8 +15,9 @@ export class LibroComponent {
     this.libro=service.getRandom();
   }
 
-  modificaPreferito()
+  modificaPreferito(valoreAttuale:boolean)
   {
+    console.log(valoreAttuale);
     this.libro.preferito = !this.libro.preferito;
   }
 }
