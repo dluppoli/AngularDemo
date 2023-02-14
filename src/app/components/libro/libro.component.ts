@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Libro } from 'src/app/models/libro';
 import { LibriService } from 'src/app/services/libri.service';
 
@@ -10,7 +11,7 @@ import { LibriService } from 'src/app/services/libri.service';
 export class LibroComponent {
   @Input() libro?:Libro;
 
-  constructor(/*service:LibriService*/)
+  constructor(/*service:LibriService*/ private router:Router)
   {
     //this.libro=service.getRandom();
   }
@@ -18,5 +19,10 @@ export class LibroComponent {
   modificaPreferito()
   {
     if(this.libro) this.libro.preferito = !this.libro.preferito;
+  }
+
+  dettaglio()
+  {
+    this.router.navigate(['libro',this.libro?.id]);
   }
 }

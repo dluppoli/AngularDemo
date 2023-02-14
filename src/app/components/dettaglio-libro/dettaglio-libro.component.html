@@ -1,1 +1,6 @@
-<p>dettaglio-libro works!</p>
+<ng-container *ngIf="libro; else elseBlock">
+    {{libro.titolo}}
+</ng-container>
+<ng-template #elseBlock>
+    Libro non trovato
+</ng-template>
