@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Libro } from 'src/app/models/libro';
 import { LibriService } from 'src/app/services/libri.service';
 
@@ -8,16 +8,15 @@ import { LibriService } from 'src/app/services/libri.service';
   styleUrls: ['./libro.component.css']
 })
 export class LibroComponent {
-  libro:Libro;
+  @Input() libro?:Libro;
 
-  constructor(service:LibriService)
+  constructor(/*service:LibriService*/)
   {
-    this.libro=service.getRandom();
+    //this.libro=service.getRandom();
   }
 
-  modificaPreferito(valoreAttuale:boolean)
+  modificaPreferito()
   {
-    console.log(valoreAttuale);
-    this.libro.preferito = !this.libro.preferito;
+    if(this.libro) this.libro.preferito = !this.libro.preferito;
   }
 }

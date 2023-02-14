@@ -35,4 +35,8 @@ export class LibriService
     {
         this.libri.push(l);
     }
+
+    cerca(valore: string): Libro[] {
+        return this.libri.filter( l => l.autore.includes(valore) || l.titolo.includes(valore));    
+    }
 }
